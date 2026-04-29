@@ -80,7 +80,7 @@ export const ROSTER = [
   { id: 69,  name: 'Skylar Paul',                   status: 'pending', method: '—',     date: '—',      amount: 160 },
   { id: 70,  name: 'Ava Philippone',                status: 'paid',    method: 'Venmo', date: 'Feb 28', amount: 160 },
   { id: 71,  name: 'Madelyn Puff',                  status: 'paid',    method: 'Zelle', date: 'Mar 1',  amount: 160 },
-  { id: 72,  name: 'Sydney Pulver',                 status: 'late',    method: '—',     date: '—',      amount: 160 },
+  { id: 72,  name: 'Sydney Pulver',                 status: 'paid',    method: '—',     date: '—',      amount: 160 },
   { id: 73,  name: 'Catherine Quan',                status: 'paid',    method: 'Cash',  date: 'Mar 2',  amount: 160 },
   { id: 74,  name: 'Christian Sainristil',          status: 'paid',    method: 'Check', date: 'Mar 3',  amount: 160 },
   { id: 75,  name: 'Zachary Sanders',               status: 'pending', method: '—',     date: '—',      amount: 160 },
