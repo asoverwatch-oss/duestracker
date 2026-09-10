@@ -119,7 +119,7 @@ function WantedPoster({ brother, days }) {
 }
 
 const WantedBoard = forwardRef(function WantedBoard({ roster }, ref) {
-  const wanted = roster.filter(b => b.status === 'late')
+  const wanted = roster.filter(b => b.status === 'late' || b.status === 'pending')
   const days = daysOverdue()
   const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
 

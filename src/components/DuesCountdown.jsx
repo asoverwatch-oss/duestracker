@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { Clock } from 'lucide-react'
 
-const TARGET_DATE = new Date('2026-05-01T00:00:00')
+const TARGET_DATE = new Date('2026-09-20T00:00:00')
 
 function getTimeLeft() {
   const diff = TARGET_DATE.getTime() - Date.now()
@@ -70,7 +70,7 @@ export default function DuesCountdown() {
             <span className="text-xs font-semibold uppercase tracking-widest">Dues Deadline</span>
           </div>
           <p className="text-lg font-semibold text-text-primary tracking-wide">
-            May 1, 2026
+            September 20, 2026
           </p>
           <p className="text-xs text-text-muted">All payments must be received by this date</p>
         </div>
