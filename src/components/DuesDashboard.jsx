@@ -3,6 +3,7 @@ import HeroStats from './HeroStats'
 import RosterTable from './RosterTable'
 import DuesCountdown from './DuesCountdown'
 import WantedBoard from './WantedBoard'
+import PaymentSection from './PaymentSection'
 import { HeroSection } from './HeroSection'
 
 export const SEMESTER = 'Spring 2026'
@@ -114,6 +115,8 @@ export default function DuesDashboard() {
         />
 
         <DuesCountdown />
+
+        <PaymentSection />
 
         <RosterTable roster={ROSTER} />
 
