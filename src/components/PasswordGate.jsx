@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // Change this to whatever passcode you share with brothers
-const PASSCODE = 'DSP2026'
+const PASSCODE = '1907'
 
 const GLASS_BORDER = 'rgba(212,160,23,0.45)'
 const GLASS_BG     = 'rgba(212,160,23,0.08)'
