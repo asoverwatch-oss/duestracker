@@ -7,7 +7,7 @@ import PaymentSection from './PaymentSection'
 import { HeroSection } from './HeroSection'
 import { ContainerScroll } from './ui/container-scroll-animation'
 
-export const SEMESTER = 'Spring 2026'
+export const SEMESTER = 'Fall 2026'
 export const DUES_AMOUNT = 160
 export const CHAPTER_GOAL = 12160 // 76 brothers × $160
 
