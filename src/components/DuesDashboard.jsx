@@ -5,6 +5,7 @@ import DuesCountdown from './DuesCountdown'
 import WantedBoard from './WantedBoard'
 import PaymentSection from './PaymentSection'
 import { HeroSection } from './HeroSection'
+import { ContainerScroll } from './ui/container-scroll-animation'
 
 export const SEMESTER = 'Spring 2026'
 export const DUES_AMOUNT = 160
@@ -104,23 +105,45 @@ export default function DuesDashboard() {
         onScrollToWanted={() => wantedRef.current?.scrollIntoView({ behavior: 'smooth' })}
       />
 
-      <main ref={mainRef} className="px-8 py-8 space-y-8 max-w-7xl mx-auto">
-        <HeroStats
-          collected={collected}
-          goal={CHAPTER_GOAL}
-          paidCount={paidCount}
-          pendingCount={pendingCount}
-          lateCount={lateCount}
-          total={ROSTER.length}
-        />
+      <main ref={mainRef} className="px-4 md:px-8">
+        <ContainerScroll
+          titleComponent={
+            <div className="flex flex-col items-center gap-3">
+              <span
+                className="font-cabin font-medium text-xs tracking-[0.28em] uppercase px-3 py-1 rounded-full"
+                style={{ background: 'rgba(212,160,23,0.12)', color: '#d4a017', border: '1px solid rgba(212,160,23,0.3)' }}
+              >
+                Spring 2026 · Alpha Kappa Chapter
+              </span>
+              <h2 className="font-instrument text-5xl md:text-7xl leading-tight" style={{ color: '#f5f0e8' }}>
+                Dues Dashboard
+              </h2>
+              <p className="font-cabin text-sm max-w-sm" style={{ color: '#9ca3af' }}>
+                Real-time collection tracking for all 76 brothers
+              </p>
+            </div>
+          }
+        >
+          <div className="space-y-6">
+            <HeroStats
+              collected={collected}
+              goal={CHAPTER_GOAL}
+              paidCount={paidCount}
+              pendingCount={pendingCount}
+              lateCount={lateCount}
+              total={ROSTER.length}
+            />
+            <DuesCountdown />
+          </div>
+        </ContainerScroll>
 
-        <DuesCountdown />
+        <div className="space-y-8 pb-8">
+          <PaymentSection />
 
-        <PaymentSection />
+          <RosterTable roster={ROSTER} />
 
-        <RosterTable roster={ROSTER} />
-
-        <WantedBoard ref={wantedRef} roster={ROSTER} />
+          <WantedBoard ref={wantedRef} roster={ROSTER} />
+        </div>
       </main>
 
       {/* Footer */}
