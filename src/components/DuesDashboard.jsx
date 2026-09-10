@@ -113,7 +113,7 @@ export default function DuesDashboard() {
                 className="font-cabin font-medium text-xs tracking-[0.28em] uppercase px-3 py-1 rounded-full"
                 style={{ background: 'rgba(212,160,23,0.12)', color: '#d4a017', border: '1px solid rgba(212,160,23,0.3)' }}
               >
-                Spring 2026 · Alpha Kappa Chapter
+                Fall 2026 · Alpha Kappa Chapter
               </span>
               <h2 className="font-instrument text-4xl md:text-7xl leading-tight" style={{ color: '#f5f0e8' }}>
                 Dues Dashboard

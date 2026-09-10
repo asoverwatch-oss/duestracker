@@ -68,7 +68,7 @@ export function HeroSection({ onScrollToMain, onScrollToWanted }) {
             className="font-cabin font-medium text-xs px-2.5 py-1 rounded-[6px]"
             style={{ background: '#d4a017', color: '#0a0a0f', boxShadow: '0 0 8px rgba(212,160,23,0.5)' }}
           >
-            Spring 2026
+            Fall 2026
           </span>
           <span className="font-cabin font-medium text-sm tracking-wide text-text-primary">
             Alpha Kappa Chapter · Dues Dashboard
@@ -105,7 +105,7 @@ export function HeroSection({ onScrollToMain, onScrollToWanted }) {
 
         {/* Subtext */}
         <p className="font-cabin font-normal text-base mt-5 max-w-[520px] text-text-muted leading-relaxed">
-          Spring 2026 dues collection tracker for the Alpha Kappa Chapter.
+          Fall 2026 dues collection tracker for the Alpha Kappa Chapter.
           Monitor payments, manage the roster, and keep brothers accountable.
         </p>
 
