@@ -19,10 +19,10 @@ export function ContainerScroll({ titleComponent, children }) {
 
   return (
     <div
-      className="h-[60rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-16"
+      className="h-[48rem] md:h-[75rem] flex items-center justify-center relative p-2 md:p-16"
       ref={containerRef}
     >
-      <div className="py-8 md:py-32 w-full relative" style={{ perspective: '1000px' }}>
+      <div className="py-4 md:py-32 w-full relative" style={{ perspective: '1000px' }}>
         <ScrollHeader translate={translate} titleComponent={titleComponent} />
         <ScrollCard rotate={rotate} scale={scale}>
           {children}

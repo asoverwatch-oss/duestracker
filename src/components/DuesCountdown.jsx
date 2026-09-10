@@ -17,8 +17,8 @@ function getTimeLeft() {
 function TimeUnit({ value, label }) {
   const display = String(value).padStart(2, '0')
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="flex items-center justify-center rounded-xl border border-card-border bg-card px-5 py-4 shadow-lg" style={{ minWidth: '5rem' }}>
+    <div className="flex flex-col items-center gap-1.5 md:gap-2">
+      <div className="flex items-center justify-center rounded-xl border border-card-border bg-card px-3 py-2.5 md:px-5 md:py-4 shadow-lg" style={{ minWidth: '3.5rem' }}>
         <AnimatePresence mode="wait">
           <motion.span
             key={display}
@@ -26,13 +26,13 @@ function TimeUnit({ value, label }) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -6, opacity: 0 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="font-mono text-4xl font-semibold tabular-nums text-gold"
+            className="font-mono text-2xl md:text-4xl font-semibold tabular-nums text-gold"
           >
             {display}
           </motion.span>
         </AnimatePresence>
       </div>
-      <span className="text-xs font-medium uppercase tracking-widest text-text-muted">
+      <span className="text-[9px] md:text-xs font-medium uppercase tracking-widest text-text-muted">
         {label}
       </span>
     </div>
@@ -41,7 +41,7 @@ function TimeUnit({ value, label }) {
 
 function Separator() {
   return (
-    <span className="pb-5 text-3xl font-light text-gold opacity-40 animate-pulse select-none">:</span>
+    <span className="pb-4 md:pb-5 text-xl md:text-3xl font-light text-gold opacity-40 animate-pulse select-none">:</span>
   )
 }
 

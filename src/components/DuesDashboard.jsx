@@ -115,10 +115,10 @@ export default function DuesDashboard() {
               >
                 Spring 2026 · Alpha Kappa Chapter
               </span>
-              <h2 className="font-instrument text-5xl md:text-7xl leading-tight" style={{ color: '#f5f0e8' }}>
+              <h2 className="font-instrument text-4xl md:text-7xl leading-tight" style={{ color: '#f5f0e8' }}>
                 Dues Dashboard
               </h2>
-              <p className="font-cabin text-sm max-w-sm" style={{ color: '#9ca3af' }}>
+              <p className="font-cabin text-xs md:text-sm max-w-sm" style={{ color: '#9ca3af' }}>
                 Real-time collection tracking for all 76 brothers
               </p>
             </div>

@@ -2,18 +2,18 @@ import { useState, useEffect } from 'react'
 
 function StatCard({ label, count, color, icon }) {
   return (
-    <div className="card px-6 py-5 flex items-center gap-4">
+    <div className="card px-3 py-3 md:px-6 md:py-5 flex items-center gap-2 md:gap-4">
       <div
-        className="w-10 h-10 rounded-full flex items-center justify-center text-lg flex-shrink-0"
+        className="w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center text-base md:text-lg flex-shrink-0"
         style={{ backgroundColor: `${color}18`, border: `1px solid ${color}40` }}
       >
         {icon}
       </div>
       <div>
-        <div className="text-2xl font-bold" style={{ color }}>
+        <div className="text-xl md:text-2xl font-bold" style={{ color }}>
           {count}
         </div>
-        <div className="text-xs text-text-muted uppercase tracking-widest mt-0.5">
+        <div className="text-[10px] md:text-xs text-text-muted uppercase tracking-widest mt-0.5">
           {label}
         </div>
       </div>
@@ -33,23 +33,23 @@ export default function HeroStats({ collected, goal, paidCount, pendingCount, la
   const remaining = goal - collected
 
   return (
-    <div className="card p-8">
+    <div className="card p-4 md:p-8">
       {/* Top row: dollar figures */}
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6">
         <div>
           <div className="text-xs text-text-muted uppercase tracking-widest mb-1">
             Total Collected
           </div>
-          <div className="text-5xl font-bold text-text-primary tracking-tight">
+          <div className="text-3xl md:text-5xl font-bold text-text-primary tracking-tight">
             ${collected.toLocaleString()}
-            <span className="text-xl text-text-muted font-normal ml-2">
+            <span className="text-base md:text-xl text-text-muted font-normal ml-2">
               / ${goal.toLocaleString()}
             </span>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <span
-            className="text-4xl font-bold"
+            className="text-3xl md:text-4xl font-bold"
             style={{ color: '#d4a017' }}
           >
             {pct}%

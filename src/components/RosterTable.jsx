@@ -7,14 +7,41 @@ const STATUS_CONFIG = {
 }
 
 const METHOD_ICONS = {
-  Venmo: '💙',
-  Zelle: '💜',
-  Cash:  '💵',
-  Check: '📝',
-  '—':   '',
+  Venmo:   '💙',
+  Zelle:   '💜',
+  Cash:    '💵',
+  Check:   '📝',
+  CashApp: '💚',
+  '—':     '',
 }
 
 const FILTERS = ['All', 'Paid', 'Pending', 'Late']
+
+function MobileRow({ brother }) {
+  const cfg = STATUS_CONFIG[brother.status]
+  return (
+    <div
+      className="px-4 py-3 border-b flex items-center justify-between gap-3"
+      style={{ borderColor: '#1e1e30' }}
+    >
+      <div className="flex items-center gap-3 min-w-0">
+        <span className="text-xs text-text-muted w-5 flex-shrink-0">{brother.id}</span>
+        <span className="text-sm font-medium text-text-primary truncate">{brother.name}</span>
+      </div>
+      <div className="flex items-center gap-2 flex-shrink-0">
+        {brother.method !== '—' && (
+          <span className="text-xs text-text-muted">{METHOD_ICONS[brother.method]}</span>
+        )}
+        <span
+          className="inline-block px-2 py-0.5 rounded-full text-xs font-semibold"
+          style={{ background: cfg.bg, border: `1px solid ${cfg.border}`, color: cfg.text }}
+        >
+          {cfg.label}
+        </span>
+      </div>
+    </div>
+  )
+}
 
 export default function RosterTable({ roster }) {
   const [filter, setFilter] = useState('All')
@@ -24,14 +51,14 @@ export default function RosterTable({ roster }) {
     : roster.filter(b => b.status === filter.toLowerCase())
 
   return (
-    <div className="card overflow-hidden flex flex-col" style={{ height: '100%' }}>
-      {/* Card header */}
-      <div className="px-6 py-4 border-b border-card-border flex items-center justify-between flex-shrink-0">
+    <div className="card overflow-hidden">
+      {/* Header */}
+      <div className="px-4 md:px-6 py-4 border-b border-card-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
           <h2 className="text-base font-semibold text-text-primary">Brother Roster</h2>
           <p className="text-xs text-text-muted mt-0.5">{visible.length} brothers shown</p>
         </div>
-        <div className="flex gap-1">
+        <div className="flex gap-1.5 flex-wrap">
           {FILTERS.map(f => (
             <button
               key={f}
@@ -49,8 +76,15 @@ export default function RosterTable({ roster }) {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-y-auto flex-1" style={{ maxHeight: '520px' }}>
+      {/* Mobile list */}
+      <div className="block md:hidden overflow-y-auto" style={{ maxHeight: '480px' }}>
+        {visible.map(brother => (
+          <MobileRow key={brother.id} brother={brother} />
+        ))}
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block overflow-y-auto" style={{ maxHeight: '520px' }}>
         <table className="w-full text-sm">
           <thead className="sticky top-0 z-10" style={{ background: '#13131f' }}>
             <tr className="border-b border-card-border">
@@ -63,7 +97,7 @@ export default function RosterTable({ roster }) {
             </tr>
           </thead>
           <tbody>
-            {visible.map((brother, i) => {
+            {visible.map(brother => {
               const cfg = STATUS_CONFIG[brother.status]
               return (
                 <tr
